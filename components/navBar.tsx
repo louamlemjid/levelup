@@ -84,13 +84,7 @@ export function NavBar() {
             className="flex items-center" 
             aria-label="Accueil Securicar"
           >
-            <Image
-              src="/Logo.png" // Path to your logo in the public directory
-              alt="Securicar Logo"
-              width={150} // Adjust width as needed
-              height={40} // Adjust height as needed, aspect ratio will be maintained
-              priority // Use priority for logos to load them faster
-            />
+            
           </Link>
  
           {/* Desktop Nav */}
