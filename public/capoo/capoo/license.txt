@@ -1,0 +1,11 @@
+Model Information:
+* title:	Capoo
+* source:	https://sketchfab.com/3d-models/capoo-271a0bddcc4e4d61be1dd93c4ae43206
+* author:	ganganchen (https://sketchfab.com/ganganchen)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Capoo" (https://sketchfab.com/3d-models/capoo-271a0bddcc4e4d61be1dd93c4ae43206) by ganganchen (https://sketchfab.com/ganganchen) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
