@@ -47,11 +47,11 @@ const EllipticalLoopLine = () => {
      
         <svg style={
       {
-        position: 'relative',
-        padding: '100px',
+        position: 'sticky',
+        
 
         width: '400px',
-        height: '1000px',
+        height: '400px',
         zIndex: '10',
       }
     }
@@ -59,7 +59,7 @@ const EllipticalLoopLine = () => {
       strokeLinecap='round'
       
       xmlns="http://www.w3.org/2000/svg" viewBox="3 5.51598 10.06 8.484">
-	<path d={pathData} stroke="blue" strokeWidth="0.5" fill="none"/>
+    <path d={pathData} stroke="blue" strokeWidth="0.5" fill="none"/>
 </svg>
       
     

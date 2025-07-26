@@ -7,7 +7,7 @@ import LeftSideHero from './leftSideHero';
 import RightSideHero from './rightSideHero';
 
 // Dynamic import to avoid SSR issues with Three.js
-const Robot3DModel = dynamic(() => import('./capoo3dModel'), {
+const Robot3DModel = dynamic(() => import('./laptop3dModel'), {
   ssr: false,
   loading: () => (
     <div className="w-full h-full flex items-center justify-center">
@@ -67,7 +67,7 @@ const Hero = () => {
       </div>
 
       {/* Grid Layout */}
-      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-3 h-screen">
+      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 h-screen">
         {/* Left Side - Company Info */}
         <div className="lg:col-span-1 flex items-center">
           <LeftSideHero />
@@ -80,21 +80,7 @@ const Hero = () => {
             <Robot3DModel />
             
             {/* Additional lighting effects around the cat */}
-            <motion.div
-              animate={{
-                boxShadow: [
-                  "0 0 50px rgba(59, 130, 246, 0.3)",
-                  "0 0 100px rgba(34, 211, 238, 0.5)",
-                  "0 0 50px rgba(59, 130, 246, 0.3)"
-                ],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-              className="absolute inset-0 pointer-events-none"
-            />
+            
           </div>
 
           {/* Floating particles around the model */}
@@ -138,10 +124,10 @@ const Hero = () => {
           />
         </div>
 
-        {/* Right Side - Countdown and Animations */}
-        <div className="lg:col-span-1 flex items-center">
+        
+        {/*<div className="lg:col-span-1 flex items-center">
           <RightSideHero />
-        </div>
+        </div>*/}
       </div>
 
       {/* Background pattern */}

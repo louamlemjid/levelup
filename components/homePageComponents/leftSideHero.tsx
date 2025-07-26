@@ -20,11 +20,12 @@ const LeftSideHero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
-          className="text-6xl lg:text-8xl font-bold text-white mb-6 tracking-tight"
+          className="text-6xl lg:text-3xl  text-white mb-6 tracking-tight"
         >
-          <span className="block">LEVEL</span>
-          <span className="block bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-            UP
+          <span className=" ">Your Business Deserves More Than Just a Website </span>
+          
+          <span className=" bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+            It Deserves a Digital Experience.
           </span>
         </motion.h1>
 
@@ -33,10 +34,14 @@ const LeftSideHero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
-          className="text-xl lg:text-2xl text-gray-300 max-w-md leading-relaxed mb-8"
+          className="text-xl lg:text-xl text-gray-300 max-w-md leading-relaxed mb-8"
         >
-          Scale your business by attracting clients with
-          <span className="text-blue-400 font-semibold"> stunning 3D websites</span>
+          From custom websites and mobile apps to SEO-optimized platforms and desktop solutions,
+           we turn your ideas into cutting-edge software tailored to Tunisian and global markets.
+
+          Add stunning  
+          <span className="text-blue-400 font-semibold"> 3D designs, seamless UX, and smart tech</span>
+          — built to grow your business.
         </motion.p>
 
         {/* Call to Action */}
@@ -44,13 +49,13 @@ const LeftSideHero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 0.8 }}
-          className="flex flex-col sm:flex-row gap-4"
+          className=" flex flex-col sm:flex-row gap-4"
         >
           <button className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-none transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 active:scale-95">
             Start Your Project
           </button>
           <button className="px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-black font-semibold rounded-none transition-all duration-300 active:scale-95">
-            View Portfolio
+            See Our Work
           </button>
         </motion.div>
 

@@ -72,8 +72,8 @@ export function NavBar() {
 
       <header id='navbar'
         className={`${
-          isSticky ? 'sticky' : ''
-        } fixed top-0 w-full z-50 bg-white/95 text-gray-900 py-3 md:py-4 backdrop-blur-sm transition-transform duration-300 ease-in-out ${
+          isSticky ? '' : ''
+        } fixed top-0 w-full z-50 text-white py-3 md:py-4 backdrop-blur-sm transition-transform duration-300 ease-in-out ${
           isVisible ? 'translate-y-0' : '-translate-y-full'
         } shadow-sm`}
       >
@@ -97,7 +97,7 @@ export function NavBar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-base font-medium text-gray-700 hover:text-[#007cf0] transition-colors duration-200 ${
+                className={`text-base font-medium text-white hover:text-[#007cf0] transition-colors duration-200 ${
                   pathname === item.href
                     ? 'after:content-[""] after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-full after:bg-gradient-to-r after:from-[#007cf0] after:to-[#00dfd8]'
                     : ''
