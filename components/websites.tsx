@@ -93,7 +93,7 @@ const Websites: React.FC = () => {
       return updated;
     });
  
-    try {
+    try { 
       let chatHistory = [];
       const prompt = `Given the website title '${title}' and its current description '${currentDescription}', generate a more detailed, engaging, and professional description (around 2-3 sentences) that highlights its key value proposition. Focus on what makes it unique and beneficial. Do not include the title in the response.`;
       chatHistory.push({ role: "user", parts: [{ text: prompt }] });
