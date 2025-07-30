@@ -51,10 +51,10 @@ const LeftSideHero = () => {
           transition={{ delay: 0.9, duration: 0.8 }}
           className=" flex flex-col sm:flex-row gap-4"
         >
-          <button className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-none transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 active:scale-95">
-            Start Your Project
+          <button className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 active:scale-95">
+            Contact Us
           </button>
-          <button className="px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-black font-semibold rounded-none transition-all duration-300 active:scale-95">
+          <button className="px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-black font-semibold rounded-lg transition-all duration-300 active:scale-95">
             See Our Work
           </button>
         </motion.div>
