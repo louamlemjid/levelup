@@ -26,27 +26,27 @@ const Window3DModel = () => {
     useFrame(({ clock }) => {
       if (group.current && isLoaded) {
         const t = clock.getElapsedTime();
-            
-        if( scrollPosition < 450) {
-            if (scrollPosition == 0){
-                group.current.position.y = Math.sin(t * 1.5) * 0.02;
-                group.current.position.y += -scrollPosition * 0.001;
+            group.current.position.y = Math.sin(t * 1.5) * 0.02;
+        // if( scrollPosition < 450) {
+        //     if (scrollPosition == 0){
+        //         group.current.position.y = Math.sin(t * 1.5) * 0.02;
+        //         group.current.position.y += -scrollPosition * 0.001;
 
-            }else{
-                group.current.position.y = -scrollPosition * 0.001;
-            group.current.position.x =  scrollPosition * -0.001;
-            group.current.scale.set(1, 1, 1);
-            console.log('Scroll position y:', group.current.position.y);
-            }
+        //     }else{
+        //         group.current.position.y = -scrollPosition * 0.001;
+        //     group.current.position.x =  scrollPosition * -0.001;
+        //     group.current.scale.set(1, 1, 1);
+        //     console.log('Scroll position y:', group.current.position.y);
+        //     }
             
-        }else{
-            if (scrollPosition * 0.005 <2.85){
-                group.current.position.x = -1.2;
-                group.current.position.y = -0.07;
-                group.current.rotation.set(0.6, 0, 0);
-                group.current.scale.set(scrollPosition * 0.005, scrollPosition * 0.005, scrollPosition * 0.005);
-            }
-        }
+        // }else{
+        //     if (scrollPosition * 0.005 <2.85){
+        //         group.current.position.x = -1.2;
+        //         group.current.position.y = -0.07;
+        //         group.current.rotation.set(0.6, 0, 0);
+        //         group.current.scale.set(scrollPosition * 0.005, scrollPosition * 0.005, scrollPosition * 0.005);
+        //     }
+        // }
 
         
       }
@@ -100,7 +100,7 @@ useEffect(() => {
         <primitive 
           object={clonedScene} 
           scale={[1.5,1.5, 1.5]}
-          position={[0.7, 0.2, 0]}
+          position={[0.1, 0.2, 0]}
           rotation={[1, 0, 0]}
         />
       </group>
@@ -131,7 +131,7 @@ const Robot3DModel = () => {
       style={{
         width: '100%',
         height: '100%',
-        position: 'fixed',
+        
         top: 0,
         left: 0,
         overflow: 'hidden',
@@ -156,7 +156,7 @@ const Robot3DModel = () => {
         }}
       >
         {/* Better lighting setup */}
-        <ambientLight color="blue" intensity={0.2} />
+        <ambientLight color="white" intensity={2} />
         <directionalLight 
           position={[5, 5, 5]} 
           intensity={1.5} 

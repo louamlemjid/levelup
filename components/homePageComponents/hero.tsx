@@ -5,13 +5,15 @@ import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import LeftSideHero from './leftSideHero';
 import RightSideHero from './rightSideHero';
-
+const Robot3DModel = dynamic(() => import('@/components/homePageComponents/window3dModel'), {
+  ssr: false,
+});
 // Dynamic import to avoid SSR issues with Three.js
 
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-black via-gray-900 to-blue-950">
+    <section className="relative min-h-screen w-full overflow-hidden ">
       {/* Dynamic CSS Lighting Effects */}
       <div className="absolute inset-0">
         {/* Blue light from left */}
@@ -69,7 +71,7 @@ const Hero = () => {
 
         {/* Center - 3D Model */}
        
-
+<Robot3DModel/>
         
         {/*<div className="lg:col-span-1 flex items-center">
           <RightSideHero />
@@ -77,16 +79,7 @@ const Hero = () => {
       </div>
 
       {/* Background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <svg className="w-full h-full" viewBox="0 0 100 100">
-          <defs>
-            <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
-              <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" strokeWidth="0.5"/>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid)" />
-        </svg>
-      </div>
+      
 
       {/* Scroll indicator */}
       <motion.div
