@@ -5,7 +5,9 @@ import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import LeftSideHero from './leftSideHero';
 import RightSideHero from './rightSideHero';
-
+const Robot3DModel = dynamic(() => import('@/components/homePageComponents/window3dModel'), {
+  ssr: false,
+});
 // Dynamic import to avoid SSR issues with Three.js
 
 
@@ -69,7 +71,7 @@ const Hero = () => {
 
         {/* Center - 3D Model */}
        
-
+<Robot3DModel/>
         
         {/*<div className="lg:col-span-1 flex items-center">
           <RightSideHero />
