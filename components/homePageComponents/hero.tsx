@@ -7,7 +7,7 @@ import LeftSideHero from './leftSideHero';
 import RightSideHero from './rightSideHero';
 
 // Dynamic import to avoid SSR issues with Three.js
-const Robot3DModel = dynamic(() => import('./laptop3dModel'), {
+const Robot3DModel = dynamic(() => import('./window3dModel'), {
   ssr: false,
   loading: () => (
     <div className="w-full h-full flex items-center justify-center">
