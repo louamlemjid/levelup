@@ -5,11 +5,13 @@ import React, { Suspense, useRef, useEffect, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, useGLTF, useAnimations } from '@react-three/drei';
 import * as THREE from 'three';
+import { getgroups } from 'process';
 
 const Window3DModel = () => {
   const group = useRef<THREE.Group>(null!);
   const [isLoaded, setIsLoaded] = useState(false);
-  
+  const [scrollPosition, setScrollPosition] = useState(0);
+
   try {
     const gltf = useGLTF('/window.glb');
     const scene = gltf.scene;
@@ -24,10 +26,43 @@ const Window3DModel = () => {
     useFrame(({ clock }) => {
       if (group.current && isLoaded) {
         const t = clock.getElapsedTime();
-        group.current.position.y = Math.sin(t * 1.5) * 0.15;
-        group.current.rotation.y = Math.sin(t * 0.3) * 0.2;
+            
+        if( scrollPosition < 450) {
+            if (scrollPosition == 0){
+                group.current.position.y = Math.sin(t * 1.5) * 0.02;
+                group.current.position.y += -scrollPosition * 0.001;
+
+            }else{
+                group.current.position.y = -scrollPosition * 0.001;
+            group.current.position.x =  scrollPosition * -0.001;
+            group.current.scale.set(1, 1, 1);
+            console.log('Scroll position y:', group.current.position.y);
+            }
+            
+        }else{
+            if (scrollPosition * 0.005 <2.85){
+                group.current.position.x = -1.2;
+                group.current.position.y = -0.07;
+                group.current.rotation.set(0.6, 0, 0);
+                group.current.scale.set(scrollPosition * 0.005, scrollPosition * 0.005, scrollPosition * 0.005);
+            }
+        }
+
+        
       }
     });
+useEffect(() => {
+      const handleScroll = () => {
+        const newScrollPosition = window.scrollY;
+        if (newScrollPosition !== scrollPosition) {
+            console.log('Scroll position changed:', scrollPosition);
+          setScrollPosition(newScrollPosition);
+          
+        }
+      };
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }, [scrollPosition]);   
 
     useEffect(() => {
       if (clonedScene) {
@@ -65,7 +100,7 @@ const Window3DModel = () => {
         <primitive 
           object={clonedScene} 
           scale={[1.5,1.5, 1.5]}
-          position={[0, 0, 0]}
+          position={[0.7, 0.2, 0]}
           rotation={[1, 0, 0]}
         />
       </group>
@@ -96,7 +131,7 @@ const Robot3DModel = () => {
       style={{
         width: '100%',
         height: '100%',
-        position: 'absolute',
+        position: 'fixed',
         top: 0,
         left: 0,
         overflow: 'hidden',
@@ -121,17 +156,17 @@ const Robot3DModel = () => {
         }}
       >
         {/* Better lighting setup */}
-        <ambientLight color="#ffffff" intensity={1} />
+        <ambientLight color="blue" intensity={0.2} />
         <directionalLight 
           position={[5, 5, 5]} 
           intensity={1.5} 
-          color="#4A90E2"
+          color="white"
           castShadow
         />
         <pointLight 
           position={[-5, 3, 5]} 
           intensity={1} 
-          color="#22D3EE" 
+          color="white" 
         />
         <spotLight 
           color="#ffffff" 

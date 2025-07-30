@@ -8,9 +8,7 @@ export default function HeroExample() {
     <main className="w-full">
       <Hero />
       {/* Add other sections below the hero */}
-      <section className="min-h-screen bg-white">
-        {/* Other content */}
-      </section>
+      
     </main>
   );
 }

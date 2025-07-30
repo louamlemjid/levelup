@@ -7,14 +7,7 @@ import LeftSideHero from './leftSideHero';
 import RightSideHero from './rightSideHero';
 
 // Dynamic import to avoid SSR issues with Three.js
-const Robot3DModel = dynamic(() => import('./window3dModel'), {
-  ssr: false,
-  loading: () => (
-    <div className="w-full h-full flex items-center justify-center">
-      <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
-    </div>
-  )
-});
+
 
 const Hero = () => {
   return (
@@ -69,60 +62,13 @@ const Hero = () => {
       {/* Grid Layout */}
       <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 h-screen">
         {/* Left Side - Company Info */}
-        <div className="lg:col-span-1 flex items-center">
+        <div className="flex items-center">
           <LeftSideHero />
+          
         </div>
 
         {/* Center - 3D Model */}
-        <div className="lg:col-span-1 relative flex items-center justify-center">
-          {/* 3D Model Container with enhanced lighting */}
-          <div className="relative w-full h-full">
-            <Robot3DModel />
-            
-            {/* Additional lighting effects around the cat */}
-            
-          </div>
-
-          {/* Floating particles around the model */}
-          <motion.div
-            animate={{
-              y: [-20, 20, -20],
-              x: [-10, 10, -10],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            className="absolute top-1/4 left-1/4 w-4 h-4 bg-blue-400 rounded-full opacity-60"
-          />
-          <motion.div
-            animate={{
-              y: [20, -20, 20],
-              x: [10, -10, 10],
-            }}
-            transition={{
-              duration: 6,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 1
-            }}
-            className="absolute bottom-1/4 right-1/4 w-3 h-3 bg-cyan-300 rounded-full opacity-50"
-          />
-          <motion.div
-            animate={{
-              y: [-15, 15, -15],
-              x: [15, -15, 15],
-            }}
-            transition={{
-              duration: 10,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 2
-            }}
-            className="absolute top-1/3 right-1/3 w-2 h-2 bg-white rounded-full opacity-70"
-          />
-        </div>
+       
 
         
         {/*<div className="lg:col-span-1 flex items-center">
