@@ -46,7 +46,7 @@ const ProjectCard = ({ project, index, scrollYProgress }: {
   const y = useTransform(
     scrollYProgress,
     [cardStart, cardEnd],
-    ["100vh", `${index * 20}px`]
+    ["100vh", `${index * 40}px`]
   );
   
   // Scale effect during scroll
@@ -75,7 +75,7 @@ const ProjectCard = ({ project, index, scrollYProgress }: {
     >
       <div className="w-full max-w-4xl rounded-2xl shadow-2xl overflow-hidden">
         {/* Browser Header */}
-        <div className="bg-gray-100 px-4 py-3 flex items-center justify-between border-b">
+        <div className="bg-gray-600 px-4 py-3 flex items-center justify-between border-b">
           <div className="flex space-x-2">
             <div className="w-3 h-3 bg-red-500 rounded-full"></div>
             <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
@@ -90,7 +90,7 @@ const ProjectCard = ({ project, index, scrollYProgress }: {
         </div>
         
         {/* Content */}
-        <div className="bg-blue-400 p-8">
+        <div className="bg-white p-8">
           <img 
             src={project.imageUrl} 
             alt={project.title}
@@ -140,10 +140,10 @@ const StackedProjects = () => {
         
         {/* Title */}
         <div className="absolute  left-1/2 transform -translate-x-1/2 text-center z-10">
-          <h2 className="text-5xl font-bold text-white mb-4">
+          <h2 className="text-5xl font-bold text-white mb-2 ">
             My Projects
           </h2>
-          <p className="text-gray-300 text-xl">
+          <p className="text-gray-300 text-xl mb-4">
             Scroll to explore my latest work
           </p>
         </div>
